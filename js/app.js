@@ -16,75 +16,33 @@ const ButtonsInstance = new buttons();
 const CheckboxInstance = new filters();
 const TabsInstance = new tabs();
 
-
 document.addEventListener('DOMContentLoaded', function() {
-    var faqItems = document.querySelectorAll('.faq__item');
-    faqItems.forEach(function(item) {
-        var top = item.querySelector('.faq__item-top');
-        var content = item.querySelector('.faq__item-content');
-        
-        top.addEventListener('click', function() {
-            item.classList.toggle('active');
-            if (item.classList.contains('active')) {
-                var height = content.scrollHeight + 'px';
-                content.style.maxHeight = height;
-            } else {
-                content.style.maxHeight = null;
-            }
-        });
-    });
-});
+    var sliders = document.querySelectorAll('.barber-slider');
+    var portfolioWrappers = document.querySelectorAll('.barber__portfolio-wrapper');
 
-window.addEventListener('scroll', function() {
-  var decElements = document.querySelectorAll('.dec');
-  var windowHeight = window.innerHeight;
-
-  decElements.forEach(function(decElement) {
-      var decPosition = decElement.getBoundingClientRect().top;
-
-      // Проверяем, есть ли уже класс 'visible'
-      var isVisible = decElement.classList.contains('visible');
-
-      if (decPosition < windowHeight && !isVisible) {
-          decElement.classList.add('visible');
-          // Устанавливаем таймер на удаление класса спустя 5 секунд
-          setTimeout(function() {
-              decElement.classList.remove('visible');
-          }, 4000); // 5000 миллисекунд = 5 секунд
-      } else if (decPosition >= windowHeight && isVisible) {
-          decElement.classList.remove('visible');
-      }
-  });
-});
-
-  document.addEventListener("DOMContentLoaded", function() {
-    if (document.getElementById('splide')) {
-        const splide = new Splide('#splide', {
-            type: 'loop',
-            drag: 'free',
-            focus: 'center',
-            autoWidth: true,
-            arrows: false,
-            pagination: false,
-            autoScroll: {
-                speed: 1,
-            },
-        });
-        splide.mount(window.splide.Extensions);
-    }
-
-    if (document.getElementById('splide2')) {
-      const splide = new Splide('#splide2', {
-          type: 'loop',
-          drag: 'free',
-          focus: 'center',
-          autoWidth: true,
-          arrows: false,
-          pagination: false,
-          autoScroll: {
-              speed: 1,
-          },
+    sliders.forEach(function(slider) {
+      slider.addEventListener('scroll', function() {
+        handleScroll(this);
       });
-      splide.mount(window.splide.Extensions);
-  }
-});
+    });
+  
+    function handleScroll(slider) {
+      portfolioWrappers.forEach(function(portfolioWrapper) {
+        if (slider.scrollTop > 50) {
+          portfolioWrapper.classList.add('is-visible');
+        } else {
+          portfolioWrapper.classList.remove('is-visible');
+        }
+
+        if (slider.scrollTop > 200) {
+          portfolioWrapper.classList.add('big-visible');
+        } else {
+          portfolioWrapper.classList.remove('big-visible');
+        }
+
+        if (slider.scrollTop > 210) {
+          slider.scrollTop = 210;
+        }
+      });
+    }
+})
