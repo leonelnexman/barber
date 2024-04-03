@@ -1,0 +1,33 @@
+.wrapper{
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+    overflow: hidden;
+}
+html{
+    font-size: calc(100vw / 1920 * 10);
+}
+a{
+    cursor: pointer;
+}
+body{
+    font-family: var(--font-family);
+    font-size: 1.6rem;
+    background: #fff;
+    margin: 0;
+    &.overflow-hidden{
+        overflow: hidden;
+    }
+}
+li{
+    list-style: none;
+}
+.container{
+    max-width: 145rem;
+    margin: 0 auto;
+    width: 145rem;
+    @media (max-width: 962px) {
+        width: 100%;
+        padding: 0 3rem;
+    }
+}
