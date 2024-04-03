@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
           portfolioWrapper.classList.remove('is-visible');
         }
 
-        if (slider.scrollTop > 200) {
+        if (slider.scrollTop > 190) {
           portfolioWrapper.classList.add('big-visible');
         } else {
           portfolioWrapper.classList.remove('big-visible');
