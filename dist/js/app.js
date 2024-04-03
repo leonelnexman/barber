@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', function() {
           portfolioWrapper.classList.remove('is-visible');
         }
 
-        if (slider.scrollTop > 190) {
+        if (slider.scrollTop > 200) {
           portfolioWrapper.classList.add('big-visible');
         } else {
           portfolioWrapper.classList.remove('big-visible');
         }
 
-        if (slider.scrollTop > 220) {
-          slider.scrollTop = 220;
+        if (slider.scrollTop > 250) {
+          slider.scrollTop = 250;
         }
       });
     }
