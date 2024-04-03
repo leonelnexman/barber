@@ -1,20 +1,20 @@
 
-import { Nav } from './components/navbar.js';
+// import { Nav } from './components/navbar.js';
 import { SwiperInit } from './components/swiperinit.js';
-import { Accordion } from './components/accordion.js';
-import { Modal } from './components/modal.js';
-import { buttons } from './components/buttons.js';
-import { filters } from './components/filters.js';
-import { tabs } from './components/tabs.js';
+// import { Accordion } from './components/accordion.js';
+// import { Modal } from './components/modal.js';
+// import { buttons } from './components/buttons.js';
+// import { filters } from './components/filters.js';
+// import { tabs } from './components/tabs.js';
 
 
-const NavInstance = new Nav();
+// const NavInstance = new Nav();
 const SwiperInstance = new SwiperInit();
-const  AccordionInstance = new Accordion();
-const ModalInstance = new Modal();
-const ButtonsInstance = new buttons();
-const CheckboxInstance = new filters();
-const TabsInstance = new tabs();
+// const  AccordionInstance = new Accordion();
+// const ModalInstance = new Modal();
+// const ButtonsInstance = new buttons();
+// const CheckboxInstance = new filters();
+// const TabsInstance = new tabs();
 
 document.addEventListener('DOMContentLoaded', function() {
   var sliders = document.querySelectorAll('.barber-slider');

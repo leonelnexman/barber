@@ -75,6 +75,21 @@ html{
         color: #828282;
     }
 }
+.swiper-slide-active .slide-main img{
+    transform: scale(1);
+    transition: all 0.3s;
+    animation: scale 1.5s ease-out forwards;
+    animation-delay: 0.2s;
+    @keyframes scale {
+        0% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+      }
+}
+
 .barber__next{
     font-family: var(--second-family);
     font-weight: 600;
