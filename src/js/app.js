@@ -17,32 +17,31 @@ const CheckboxInstance = new filters();
 const TabsInstance = new tabs();
 
 document.addEventListener('DOMContentLoaded', function() {
-    var sliders = document.querySelectorAll('.barber-slider');
-    var portfolioWrappers = document.querySelectorAll('.barber__portfolio-wrapper');
-
-    sliders.forEach(function(slider) {
-      slider.addEventListener('scroll', function() {
-        handleScroll(this);
-      });
-    });
+  var sliders = document.querySelectorAll('.barber-slider');
   
-    function handleScroll(slider) {
-      portfolioWrappers.forEach(function(portfolioWrapper) {
-        if (slider.scrollTop > 50) {
-          portfolioWrapper.classList.add('is-visible');
-        } else {
-          portfolioWrapper.classList.remove('is-visible');
-        }
+  sliders.forEach(function(slider) {
+    var portfolioWrapper = slider.querySelector('.barber__portfolio-wrapper');
+    
+    slider.addEventListener('scroll', function() {
+      handleScroll(slider, portfolioWrapper);
+    });
+  });
 
-        if (slider.scrollTop > 200) {
-          portfolioWrapper.classList.add('big-visible');
-        } else {
-          portfolioWrapper.classList.remove('big-visible');
-        }
-
-        if (slider.scrollTop > 220) {
-          slider.scrollTop = 220;
-        }
-      });
+  function handleScroll(slider, portfolioWrapper) {
+    if (slider.scrollTop > 50) {
+      portfolioWrapper.classList.add('is-visible');
+    } else {
+      portfolioWrapper.classList.remove('is-visible');
     }
-})
+
+    if (slider.scrollTop > 200) {
+      portfolioWrapper.classList.add('big-visible');
+    } else {
+      portfolioWrapper.classList.remove('big-visible');
+    }
+
+    if (slider.scrollTop > 220) {
+      slider.scrollTop = 220;
+    }
+  }
+});

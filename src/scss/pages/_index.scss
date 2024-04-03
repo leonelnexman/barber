@@ -3,7 +3,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
-    max-height: 100vh;
 }
 .barber__wrapper{
     padding: 6rem;
@@ -76,7 +75,6 @@
     left: 0;
     width: 100%;
     overflow-x: hidden;
-    scroll-behavior: smooth;
     &::-webkit-scrollbar{
         display: none;
     }
@@ -98,7 +96,7 @@
         margin-left: 14.2rem;
     }
     &__name{
-        font-family: var(--third-family);
+        font-family: var(--font-family);
         font-weight: 900;
         font-size: 17rem;
         line-height: 80%;
@@ -106,7 +104,7 @@
         color: #000;
     }
     &__special{
-        font-family: var(--third-family);
+        font-family: var(---font-family);
         font-weight: 900;
         font-size: 11rem;
         line-height: 80%;
@@ -140,7 +138,7 @@
     &__portfolio{
         display: block;
         margin-top: 5rem;
-        font-family: var(--second-family);
+        font-family:  "Jura", sans-serif;
         font-weight: 600;
         font-size: 1.6rem;
         line-height: 128%;
@@ -158,14 +156,14 @@
         width: 100%;
         height: 100vh;
         z-index: 777777777777777777777;
-        transform: translateY(100vh);
+        transform: translateY(100rem);
         transition: all 0.7s;
         &.is-visible{
-            transform: translateY(76vh);
+            transform: translateY(72rem);
             transition: all 0.7s;
         }
         &.big-visible{
-            transform: translateY(20vh);
+            transform: translateY(19.8rem) !important;
             transition: all 0.7s;
         }
     }
