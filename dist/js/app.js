@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
       portfolioWrapper.classList.remove('big-visible');
     }
 
-    if (slider.scrollTop > 220) {
-      slider.scrollTop = 220;
-    }
+    // if (slider.scrollTop > 220) {
+    //   slider.scrollTop = 220;
+    // }
   }
 });

@@ -16,6 +16,7 @@ export class SwiperInit {
             slidesPerView: 1,
             spaceBetween: 30,
             speed: 1000,
+            allowTouchMove: false,
             navigation: {
               nextEl: '.barber__next',
               prevEl: '.barber__prev',
@@ -23,6 +24,11 @@ export class SwiperInit {
             thumbs: {
               swiper: mainthumb,
             },
+            on: {
+              slideChange: function () {
+                document.querySelector('.barber-slider').scrollTo(0, 0);
+              }
+            }
           });
         }
       }
